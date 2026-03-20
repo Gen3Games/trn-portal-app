@@ -29,7 +29,7 @@ import { settings } from '@polkadot/ui-settings';
 import { formatBalance, isNumber, isTestChain, objectSpread, stringify } from '@polkadot/util';
 import { defaults as addressDefaults } from '@polkadot/util-crypto/address/defaults';
 
-import { lightSpecs, relaySpecs } from './light/index.js';
+import { lightSpecLoaders, relaySpecs } from './light/index.js';
 import { statics } from './statics.js';
 import { decodeUrlTypes } from './urlTypes.js';
 
@@ -211,7 +211,7 @@ async function getLightProvider (chain: string): Promise<ScProvider> {
 
   if (sc !== 'substrate-connect') {
     throw new Error(`Cannot connect to non substrate-connect protocol ${chain}`);
-  } else if (!relaySpecs[relayName] || (paraName && !lightSpecs[relayName]?.[paraName])) {
+  } else if (!relaySpecs[relayName] || (paraName && !lightSpecLoaders[relayName]?.[paraName])) {
     throw new Error(`Unable to construct light chain ${chain}`);
   }
 
@@ -221,11 +221,9 @@ async function getLightProvider (chain: string): Promise<ScProvider> {
     return relay;
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-  const specMod = await import(`${lightSpecs[relayName][paraName]}`);
+  const spec = await lightSpecLoaders[relayName][paraName]();
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  return new ScProvider(Sc, JSON.stringify(specMod.default), relay);
+  return new ScProvider(Sc, JSON.stringify(spec), relay);
 }
 
 /**

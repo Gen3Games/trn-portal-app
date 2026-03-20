@@ -3,3 +3,5 @@
 
 // Place any environment-specific configuration here
 // (Useful for own specific container builds)
+
+window.__ENV__ = window.__ENV__ || {};

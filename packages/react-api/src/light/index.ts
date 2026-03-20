@@ -19,6 +19,17 @@ export const lightSpecs: Record<string, Record<string, string>> =
       return all;
     }, {});
 
+export const lightSpecLoaders: Record<string, Record<string, () => Promise<unknown>>> = {
+  kusama: {
+    gm: () => import('./kusama/gm.json').then(({ default: spec }) => spec),
+    shiden: () => import('./kusama/shiden.json').then(({ default: spec }) => spec),
+    tinkernet: () => import('./kusama/tinkernet.json').then(({ default: spec }) => spec)
+  },
+  polkadot: {
+    astar: () => import('./polkadot/astar.json').then(({ default: spec }) => spec)
+  }
+};
+
 export const relaySpecs: Record<string, string> = {
   kusama: WellKnownChain.ksmcc3,
   polkadot: WellKnownChain.polkadot,

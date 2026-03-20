@@ -6,13 +6,13 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
-        step: ['lint', 'test', 'build:code', 'build:i18n', 'build:electron']
+        step: ['lint', 'test', 'build:code', 'build:i18n', 'build:www']
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
       with:
-        node-version: 'lts/*'
+        node-version: '22'
     - name: Set Execute Permissions
       run: chmod +x ./scripts/*
     - name: ${{ matrix.step }}

@@ -9,6 +9,14 @@ import { extractIpfsDetails } from '@polkadot/react-hooks/useIpfs';
 import { settings } from '@polkadot/ui-settings';
 import { assert } from '@polkadot/util';
 
+declare global {
+  interface Window {
+    __ENV__?: {
+      WS_URL?: string;
+    };
+  }
+}
+
 function networkOrUrl (apiUrl: string): void {
   if (apiUrl.startsWith('light://')) {
     console.log('Light endpoint=', apiUrl.replace('light://', ''));
@@ -49,9 +57,10 @@ function getApiUrl (): string {
 
   const stored = store.get('settings') as Record<string, unknown> || {};
   const fallbackUrl = endpoints.find(({ value }) => !!value);
+  const runtimeWsUrl = window.__ENV__?.WS_URL;
 
   // via settings, or the default chain
-  return [stored.apiUrl, process.env.WS_URL].includes(settings.apiUrl)
+  return [stored.apiUrl, runtimeWsUrl, process.env.WS_URL].includes(settings.apiUrl)
     ? settings.apiUrl // keep as-is
     : fallbackUrl
       ? fallbackUrl.value // grab the fallback
