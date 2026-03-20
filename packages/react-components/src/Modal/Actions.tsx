@@ -22,11 +22,12 @@ function Actions ({ children, className = '' }: Props): React.ReactElement<Props
 }
 
 const StyledDiv = styled.div`
-  background-color: var(--bg-input);
-  border-radius: 0 0 4px 4px;
+  background-color: color-mix(in srgb, var(--surface-2) 90%, var(--bg-input));
+  border-top: 1px solid var(--border-subtle);
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
 
   .ui--Button-Group {
-    margin: 1rem 1rem;
+    margin: 1rem 1.25rem 1.25rem;
   }
 `;
 

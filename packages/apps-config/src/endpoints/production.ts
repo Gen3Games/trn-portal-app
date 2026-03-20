@@ -16,9 +16,10 @@ export const prodChains: EndpointOption[] = [
   {
     info: 'rootnet',
     providers: {
-      'TRN-GLOBAL': 'wss://root.rootnet.live/archive/ws'
+      'GEN3 Labs': 'wss://phoenix.gen3labs.tech',
+      'TRN-GLOBAL': 'wss://root.rootnet.live/ws'
     },
-    text: 'Root (Archive Node)',
+    text: 'Root (Full Node)',
     ui: {
       color: '#000000',
       logo: chainsRootnetPNG
@@ -27,9 +28,10 @@ export const prodChains: EndpointOption[] = [
   {
     info: 'rootnet',
     providers: {
-      'TRN-GLOBAL': 'wss://root.rootnet.live/ws'
+      'GEN3 Labs': 'wss://aion.gen3labs.tech',
+      'TRN-GLOBAL': 'wss://root.rootnet.live/archive/ws'
     },
-    text: 'Root (Full Node)',
+    text: 'Root (Archive Node)',
     ui: {
       color: '#000000',
       logo: chainsRootnetPNG

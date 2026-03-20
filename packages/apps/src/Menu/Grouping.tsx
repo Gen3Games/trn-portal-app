@@ -56,10 +56,12 @@ const StyledLi = styled.li`
   position: relative;
 
   .groupHdr {
-    border-radius: 0.25rem;
-    padding: 0.857rem 1.375rem;
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+    padding: 0.857rem 1.2rem;
     font-weight: var(--font-weight-normal);
     line-height: 1.214rem;
+    transition: background var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base), border-color var(--transition-base);
 
     > .ui--Icon {
       margin-left: 0.75rem;
@@ -67,13 +69,16 @@ const StyledLi = styled.li`
   }
 
   &.isActive .groupHdr {
-    background-color: var(--bg-tabs);
+    background-color: var(--surface-3);
+    border-color: var(--border-subtle);
     font-weight: var(--font-weight-normal);
     margin-bottom: 0;
+    box-shadow: var(--shadow-1);
   }
 
   .groupMenu {
-    border-radius: 0.25rem;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
     box-shadow: 0 ${SHA_OFF} ${SHA_OFF} -${SHA_OFF} ${SHA_COL}, ${SHA_OFF} 0 ${SHA_OFF} -${SHA_OFF} ${SHA_COL}, -${SHA_OFF} 0 ${SHA_OFF} -${SHA_OFF} ${SHA_COL};
     display: none;
     margin: 0;
@@ -104,7 +109,8 @@ const StyledLi = styled.li`
 
   &:hover {
     .groupHdr {
-      box-shadow: 0px 4px 37px rgba(0, 0, 0, 0.08);
+      box-shadow: var(--shadow-2);
+      transform: translateY(-1px);
       padding-bottom: 2rem;
       margin-bottom: -2rem;
     }

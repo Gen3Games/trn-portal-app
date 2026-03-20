@@ -31,10 +31,13 @@ function NodeInfo ({ className = '' }: Props): React.ReactElement<Props> {
 }
 
 const StyledDiv = styled.div`
-  background: transparent;
+  background: var(--surface-1);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-1);
   font-size: var(--font-size-tiny);
   line-height: 1.2;
-  padding: 0 0 0 1rem;
+  padding: 0.65rem 0.9rem;
   text-align: right;
 
   > div {

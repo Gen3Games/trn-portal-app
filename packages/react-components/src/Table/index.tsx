@@ -130,6 +130,11 @@ const StyledDiv = styled.div`
     width: 100%;
     z-index: 1;
 
+    &.isNotFixed,
+    &.isFixed {
+      border-collapse: separate;
+    }
+
     &.isFixed {
       table-layout: fixed;
     }
@@ -187,9 +192,12 @@ const StyledDiv = styled.div`
     position: relative;
 
     td {
-      background: var(--bg-table);
+      background: color-mix(in srgb, var(--surface-3) 90%, var(--bg-table));
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-subtle);
       padding: 0.5rem 1rem;
       text-align: left;
+      transition: background var(--transition-fast), box-shadow var(--transition-fast);
       vertical-align: middle;
 
       > article.mark {
@@ -414,6 +422,7 @@ const StyledDiv = styled.div`
       &:not(.isExpanded) {
         td {
           border-top: ${BORDER_TOP};
+          box-shadow: var(--shadow-1);
 
           &:first-child {
             border-top-left-radius: ${BORDER_RADIUS};

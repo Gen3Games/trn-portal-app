@@ -1207,6 +1207,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fontsource-variable/geist-mono@npm:^5.2.7":
+  version: 5.2.7
+  resolution: "@fontsource-variable/geist-mono@npm:5.2.7"
+  checksum: 10/e6f215b9247765a7439205cffb70315390c09e17ac937a6d1b32de4ff01676adb8c27f952965156b35614bc8f927424a28f00b3d9f7d4fcb67f288efeabde89b
+  languageName: node
+  linkType: hard
+
+"@fontsource-variable/geist@npm:^5.2.8":
+  version: 5.2.8
+  resolution: "@fontsource-variable/geist@npm:5.2.8"
+  checksum: 10/15bdedec8c10f81b0036100d27d08f633fd4149832fb4365c5f912efab4589781e6779c667272ad47f429b72d31c6e662453fd424420f2842dad4a4d5cd3f422
+  languageName: node
+  linkType: hard
+
 "@fortawesome/fontawesome-common-types@npm:6.5.1":
   version: 6.5.1
   resolution: "@fortawesome/fontawesome-common-types@npm:6.5.1"
@@ -2795,6 +2809,8 @@ __metadata:
   resolution: "@polkadot/apps@workspace:packages/apps"
   dependencies:
     "@acala-network/chopsticks-core": "npm:^1.0.1"
+    "@fontsource-variable/geist": "npm:^5.2.8"
+    "@fontsource-variable/geist-mono": "npm:^5.2.7"
     "@polkadot/apps-config": "npm:^0.150.1"
     "@polkadot/apps-routing": "npm:^0.150.1"
     "@polkadot/dev": "npm:^0.83.2"

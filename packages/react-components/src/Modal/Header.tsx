@@ -28,9 +28,11 @@ function Header ({ className = '', header, onClose }: Props): React.ReactElement
 }
 
 const StyledDiv = styled.div`
+  align-items: center;
+  border-bottom: 1px solid var(--border-subtle);
   display: flex;
   justify-content: space-between;
-  padding: 0.75rem 1.5rem 0;
+  padding: 1rem 1.25rem;
 `;
 
 export default React.memo(Header);

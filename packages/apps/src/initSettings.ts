@@ -17,6 +17,21 @@ declare global {
   }
 }
 
+const ROOT_DEFAULT_URL = 'wss://phoenix.gen3labs.tech';
+const ROOT_LEGACY_DEFAULT_URLS = new Set([
+  'wss://aion.gen3labs.tech',
+  'wss://root.rootnet.live/archive/ws',
+  'wss://root.rootnet.live/ws'
+]);
+
+function normalizeDefaultApiUrl (apiUrl: unknown): string | undefined {
+  return typeof apiUrl === 'string' && ROOT_LEGACY_DEFAULT_URLS.has(apiUrl)
+    ? ROOT_DEFAULT_URL
+    : typeof apiUrl === 'string'
+      ? apiUrl
+      : undefined;
+}
+
 function networkOrUrl (apiUrl: string): void {
   if (apiUrl.startsWith('light://')) {
     console.log('Light endpoint=', apiUrl.replace('light://', ''));
@@ -56,12 +71,13 @@ function getApiUrl (): string {
   }
 
   const stored = store.get('settings') as Record<string, unknown> || {};
+  const storedApiUrl = normalizeDefaultApiUrl(stored.apiUrl);
   const fallbackUrl = endpoints.find(({ value }) => !!value);
   const runtimeWsUrl = window.__ENV__?.WS_URL;
 
   // via settings, or the default chain
-  return [stored.apiUrl, runtimeWsUrl, process.env.WS_URL].includes(settings.apiUrl)
-    ? settings.apiUrl // keep as-is
+  return [storedApiUrl, runtimeWsUrl, process.env.WS_URL].includes(settings.apiUrl)
+    ? normalizeDefaultApiUrl(settings.apiUrl) || settings.apiUrl // keep as-is
     : fallbackUrl
       ? fallbackUrl.value // grab the fallback
       : 'ws://127.0.0.1:9944'; // nothing found, go local

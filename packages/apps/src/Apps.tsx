@@ -54,7 +54,27 @@ const StyledDiv = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  isolation: isolate;
   min-height: 100vh;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+    z-index: -1;
+  }
+
+  &::before {
+    background: var(--backdrop-page);
+    opacity: 0.95;
+  }
+
+  &::after {
+    background: linear-gradient(180deg, var(--surface-1), transparent 16rem);
+  }
 
   ${[
     0, 1, 2, 3, 4, 5, 6, 7, 8, 9,

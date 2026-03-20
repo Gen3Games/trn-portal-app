@@ -93,9 +93,10 @@ const StyledDiv = styled.div`
 
   .ui--Modal__body {
     margin-top: 30px;
-    background: var(--bg-page);
-    border-radius: 4px;
-    box-shadow: none;
+    background: color-mix(in srgb, var(--surface-3) 94%, var(--bg-page));
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-3);
 
     display: flex;
     flex-direction: column;

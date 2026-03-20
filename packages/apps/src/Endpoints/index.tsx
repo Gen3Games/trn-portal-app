@@ -368,8 +368,42 @@ function Endpoints ({ className = '', offset, onClose }: Props): React.ReactElem
 }
 
 const StyledSidebar = styled(Sidebar)`
+  background: var(--bg-page);
+  box-shadow: 6px 0 20px rgba(0, 0, 0, 0.22);
   color: var(--color-text);
-  padding-top: 3.5rem;
+  padding-top: 4.75rem;
+
+  .ui--Sidebar-buttons {
+    align-items: center;
+    background: var(--bg-page);
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+    left: 0;
+    padding: 0.75rem 1rem;
+    right: 0;
+    top: 0;
+  }
+
+  .ui--Sidebar-buttons .ui--Button {
+    box-shadow: none;
+    transform: none !important;
+  }
+
+  .ui--Sidebar-buttons .ui--Button:not(.isCircular) {
+    background: transparent;
+    border-color: transparent;
+  }
+
+  .ui--Sidebar-buttons .ui--Button.isCircular {
+    background: var(--surface-2);
+    border-color: var(--border-subtle);
+  }
+
+  .ui--Sidebar-buttons .ui--Button.isDisabled {
+    opacity: 0.45;
+  }
 
   .customButton {
     position: absolute;

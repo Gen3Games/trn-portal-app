@@ -67,6 +67,10 @@ const StyledDiv = styled.div`
     right: 0.5rem;
     top: 0.5rem;
   }
+
+  .ui--Sidebar-buttons .ui--Button {
+    transform: none;
+  }
 `;
 
 export default React.memo(Sidebar);

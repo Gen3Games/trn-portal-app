@@ -78,7 +78,7 @@ const ICON_PADDING = 0.5;
 
 const StyledButton = styled.button`
   background: transparent;
-  border: none;
+  border: 1px solid transparent;
   color: inherit;
   cursor: pointer;
   line-height: 1;
@@ -87,6 +87,7 @@ const StyledButton = styled.button`
   position: relative;
   vertical-align: middle;
   text-align: center;
+  transition: background var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
 
   &:not(.hasLabel) {
     padding: 0.7em;
@@ -98,7 +99,7 @@ const StyledButton = styled.button`
   }
 
   &:not(.isCircular) {
-    border-radius: 0.25rem;
+    border-radius: var(--radius-md);
   }
 
   &:focus {
@@ -114,7 +115,9 @@ const StyledButton = styled.button`
   }
 
   &.isBasic {
-    background: var(--bg-table);
+    background: color-mix(in srgb, var(--surface-2) 84%, var(--bg-table));
+    border-color: var(--border-subtle);
+    box-shadow: var(--shadow-1);
   }
 
   &.isCircular {
@@ -125,6 +128,7 @@ const StyledButton = styled.button`
     background: none;
     box-shadow: none;
     cursor: not-allowed;
+    opacity: 0.6;
   }
 
   &.isBusy {
@@ -138,6 +142,10 @@ const StyledButton = styled.button`
 
   &.isIcon {
     background: transparent;
+  }
+
+  &:hover:not(.isDisabled):not(.isReadOnly) {
+    transform: translateY(-1px);
   }
 
   .ui--Button-overlay {

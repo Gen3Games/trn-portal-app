@@ -22,12 +22,16 @@ export default `
   .ui.selection.dropdown > input {
     background: var(--bg-input);
     border-color: var(--border-input);
+    border-radius: var(--radius-md);
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.02);
     color: var(--color-text);
     font: var(--font-sans);
     font-size: var(--font-size-base);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
 
     &:focus {
       background: var(--bg-input);
+      box-shadow: 0 0 0 4px color-mix(in srgb, var(--ui-highlight) 14%, transparent);
       color: var(--color-text);
     }
   }
@@ -50,10 +54,15 @@ export default `
     &.selection.visible {
       background: var(--bg-input);
       color: var(--color-text);
+      border-color: var(--border-subtle);
+      box-shadow: var(--shadow-1);
     }
 
     .menu {
-      background: var(--bg-input);
+      background: color-mix(in srgb, var(--surface-3) 94%, var(--bg-input));
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-2);
       color: var(--color-text);
 
       > .item {
@@ -146,7 +155,8 @@ export default `
 
   /* modals aligned to top, not center */
   .ui.dimmer {
-    background-color: rgba(96, 96, 96, 0.5);
+    backdrop-filter: blur(10px);
+    background-color: rgba(24, 24, 27, 0.38);
     justify-content: flex-start;
   }
 

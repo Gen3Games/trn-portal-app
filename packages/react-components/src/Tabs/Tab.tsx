@@ -47,13 +47,16 @@ function Tab ({ basePath, className = '', count, hasParams, index, isExact, isRo
 
 const StyledNavLink = styled(NavLink)`
   align-items: center;
+  border-radius: var(--radius-md);
   display: flex;
   color: #8B8B8B;
   height: 100%;
-  padding: 0 1.5rem;
+  padding: 0 1.1rem;
   position: relative;
+  transition: color var(--transition-fast), background var(--transition-fast);
 
   &:hover {
+    background: var(--surface-1);
     color: #8B8B8B;
 
     .tabLinkText::after {
@@ -67,13 +70,14 @@ const StyledNavLink = styled(NavLink)`
       position: absolute;
       width: 3.14rem;
       height: 2px;
-      bottom: -2px;
+      bottom: -1px;
       left: 50%;
       transform: translateX(-50%);
     }
   }
 
   &.active {
+    background: var(--surface-1);
     color: var(--color-text) !important;
     font-weight: var(--font-weight-normal);
 

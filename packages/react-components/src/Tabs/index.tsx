@@ -83,8 +83,9 @@ function Tabs ({ basePath, className = '', hidden, items }: Props): React.ReactE
 }
 
 const StyledHeader = styled.header`
-  background: var(--bg-tabs);
+  background: color-mix(in srgb, var(--surface-2) 92%, var(--bg-tabs));
   border-bottom: 1px solid var(--border-tabs);
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.04);
   text-align: left;
   z-index: 1;
 

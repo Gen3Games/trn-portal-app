@@ -54,12 +54,14 @@ const StyledLi = styled.li`
   &.topLevel {
     font-weight: var(--font-weight-normal);
     line-height: 1.214rem;
-    border-radius: 0.15rem;
+    border-radius: var(--radius-md);
 
     a {
+      border: 1px solid transparent;
       padding: 0.857rem 0.857em 0.857rem 1rem;
       line-height: 1.214rem;
-      border-radius: 0.25rem;
+      border-radius: var(--radius-md);
+      transition: background var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
     }
 
     &.isActive.highlight--color-contrast {
@@ -67,7 +69,9 @@ const StyledLi = styled.li`
       color: var(--color-text);
 
       a {
-        background-color: var(--bg-tabs);
+        background-color: var(--surface-3);
+        border-color: var(--border-subtle);
+        box-shadow: var(--shadow-1);
       }
     }
 
@@ -99,6 +103,7 @@ const StyledLi = styled.li`
     padding: 0.5rem 1.15rem 0.57rem;
     text-decoration: none;
     line-height: 1.5rem;
+    transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
   }
 
   .ui--Badge {

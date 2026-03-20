@@ -55,16 +55,28 @@ function ChainInfo ({ className }: Props): React.ReactElement<Props> {
 
 const StyledDiv = styled.div`
   box-sizing: border-box;
-  padding: 0.5rem 1rem 0.5rem 0;
+  padding: 0.65rem 1rem 0.65rem 0;
   margin: 0;
 
   .apps--SideBar-logo-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background: var(--surface-1);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-1);
+    padding: 0.75rem 0.9rem;
+    transition: transform var(--transition-base), box-shadow var(--transition-base), background var(--transition-base);
 
     &.isClickable {
       cursor: pointer;
+
+      &:hover {
+        background: var(--surface-2);
+        box-shadow: var(--shadow-2);
+        transform: translateY(-1px);
+      }
     }
 
     .ui--ChainImg {
@@ -89,7 +101,7 @@ const StyledDiv = styled.div`
       flex: 1;
       font-size: var(--font-size-tiny);
       line-height: 1.2;
-      padding-right: 0.5rem;
+      padding-right: 0.75rem;
       text-align: right;
 
       .chain {

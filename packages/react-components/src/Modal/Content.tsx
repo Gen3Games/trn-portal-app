@@ -19,7 +19,7 @@ function Content ({ children, className = '' }: Props): React.ReactElement<Props
 }
 
 const StyledDiv = styled.div`
-  padding: 1.5rem;
+  padding: 1.25rem 1.5rem 1.5rem;
 `;
 
 export default React.memo(Content);

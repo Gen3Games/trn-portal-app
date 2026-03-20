@@ -82,11 +82,12 @@ function NetworkDisplay ({ apiUrl, className = '', setApiUrl, value: { isChild, 
 
 const StyledDiv = styled.div`
   border-left: 0.25rem solid transparent;
-  border-radius: 0.25rem;
+  border-radius: var(--radius-sm);
   cursor: pointer;
   margin: 0 0 0.25rem 0;
-  padding: 0.375rem 0.5rem 0.375rem 1rem;
+  padding: 0.375rem 0.5rem 0.375rem 0.875rem;
   position: relative;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
 
   &.isUnreachable {
     opacity: var(--opacity-light);
@@ -94,7 +95,7 @@ const StyledDiv = styled.div`
 
   &.isSelected,
   &:hover {
-    background: var(--bg-table);
+    background: var(--surface-1);
   }
 
   .endpointSection {

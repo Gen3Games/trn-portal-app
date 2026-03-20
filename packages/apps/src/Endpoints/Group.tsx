@@ -63,15 +63,16 @@ function GroupDisplay ({ affinities, apiUrl, children, className = '', index, is
 
 const StyledDiv = styled.div`
   .groupHeader {
-    border-radius: 0.25rem;
+    border-radius: var(--radius-sm);
     cursor: pointer;
     line-height: 1;
     padding: 0.75rem 1rem;
     position: relative;
     text-transform: uppercase;
+    transition: background var(--transition-fast);
 
     &:hover {
-      background: var(--bg-table);
+      background: var(--surface-1);
     }
 
     &.isSpaced {
@@ -84,7 +85,7 @@ const StyledDiv = styled.div`
   }
 
   .groupNetworks {
-    padding: 0.25rem 0 0.5rem 1rem;
+    padding: 0.25rem 0 0.5rem 0.75rem;
   }
 `;
 

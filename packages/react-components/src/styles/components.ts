@@ -3,9 +3,10 @@
 
 export default `
   .ui--output {
-    background: var(--bg-input);
-    border-radius: 4px;
-    border: 1px dashed #eee;
+    background: color-mix(in srgb, var(--surface-2) 80%, var(--bg-input));
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-subtle);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
     box-sizing: border-box;
     line-height: 1rem;
     max-height: 25rem;
@@ -20,7 +21,7 @@ export default `
     }
 
     &.monospace {
-      font-family: monospace;
+      font: var(--font-mono);
     }
   }
 

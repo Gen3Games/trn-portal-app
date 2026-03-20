@@ -369,14 +369,17 @@ export default createGlobalStyle<Props>(({ uiHighlight }: Props) => `
   }
 
   article {
-    background: var(--bg-table);
-    border: 1px solid #f2f2f2;
-    border-radius: 0.25rem;
+    backdrop-filter: blur(10px);
+    background: color-mix(in srgb, var(--surface-3) 88%, var(--bg-table));
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-1);
     box-sizing: border-box;
     margin: 0.25rem;
-    padding: 1.25rem;
+    padding: 1.35rem 1.4rem;
     position: relative;
     text-align: left;
+    transition: border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
 
     > ul {
       margin: 0;
@@ -453,9 +456,13 @@ export default createGlobalStyle<Props>(({ uiHighlight }: Props) => `
   }
 
   body {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    background: var(--bg-page);
     height: 100%;
     margin: 0;
     font: var(--font-sans);
+    text-rendering: optimizeLegibility;
   }
 
   br {
@@ -489,6 +496,7 @@ export default createGlobalStyle<Props>(({ uiHighlight }: Props) => `
     color: var(--color-header);
     font: var(--font-sans);
     font-weight: var(--font-weight-header);
+    letter-spacing: -0.02em;
     margin-bottom: 0.25rem;
   }
 
@@ -549,6 +557,10 @@ export default createGlobalStyle<Props>(({ uiHighlight }: Props) => `
   button {
     font-size: var(--font-size-small);
     font-weight: var(--font-weight-normal);
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--ui-highlight) 20%, transparent);
   }
 
   main {
