@@ -381,24 +381,39 @@ const StyledSidebar = styled(Sidebar)`
     gap: 0.5rem;
     justify-content: flex-end;
     left: 0;
-    padding: 0.75rem 1rem;
+    padding: 0.55rem 0.85rem;
     right: 0;
     top: 0;
   }
 
   .ui--Sidebar-buttons .ui--Button {
     box-shadow: none;
+    font-size: var(--font-size-small);
+    line-height: 1.1;
+    margin: 0;
+    white-space: nowrap;
     transform: none !important;
   }
 
   .ui--Sidebar-buttons .ui--Button:not(.isCircular) {
     background: transparent;
     border-color: transparent;
+    padding: 0.5rem 0.65rem 0.5rem 0.55rem;
   }
 
   .ui--Sidebar-buttons .ui--Button.isCircular {
+    align-items: center;
     background: var(--surface-2);
     border-color: var(--border-subtle);
+    display: inline-flex;
+    height: 2.5rem;
+    justify-content: center;
+    padding: 0.55rem;
+    width: 2.5rem;
+  }
+
+  .ui--Sidebar-buttons .ui--Button:not(.isCircular) .ui--Icon {
+    margin-right: 0.35rem !important;
   }
 
   .ui--Sidebar-buttons .ui--Button.isDisabled {

@@ -25,7 +25,7 @@ function ChainInfo ({ className }: Props): React.ReactElement<Props> {
   return (
     <StyledDiv className={className}>
       <div
-        className={`apps--SideBar-logo-inner${canToggle ? ' isClickable' : ''} highlight--color-contrast`}
+        className={`apps--SideBar-logo-inner${canToggle ? ' isClickable' : ''}`}
         onClick={toggleEndpoints}
       >
         <ChainImg />
@@ -55,7 +55,7 @@ function ChainInfo ({ className }: Props): React.ReactElement<Props> {
 
 const StyledDiv = styled.div`
   box-sizing: border-box;
-  padding: 0.65rem 1rem 0.65rem 0;
+  padding: 0.45rem 0.9rem 0.45rem 0;
   margin: 0;
 
   .apps--SideBar-logo-inner {
@@ -66,7 +66,8 @@ const StyledDiv = styled.div`
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-1);
-    padding: 0.75rem 0.9rem;
+    color: var(--color-text);
+    padding: 0.55rem 0.8rem;
     transition: transform var(--transition-base), box-shadow var(--transition-base), background var(--transition-base);
 
     &.isClickable {
@@ -80,9 +81,9 @@ const StyledDiv = styled.div`
     }
 
     .ui--ChainImg {
-      height: 3rem;
+      height: 2.5rem;
       margin-right: 0.5rem;
-      width: 3rem;
+      width: 2.5rem;
     }
 
     .ui--Icon.dropdown,

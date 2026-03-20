@@ -162,7 +162,6 @@ function Menu ({ className = '' }: Props): React.ReactElement<Props> {
 }
 
 const StyledDiv = styled.div`
-  backdrop-filter: blur(18px);
   background: color-mix(in srgb, var(--surface-2) 92%, transparent);
   border-bottom: 1px solid var(--border-subtle);
   box-shadow: var(--shadow-1);
@@ -180,7 +179,7 @@ const StyledDiv = styled.div`
     flex-direction: row;
     display: flex;
     justify-content: space-between;
-    min-height: 5rem;
+    min-height: 4.35rem;
     padding: 0 1.5rem;
     width: 100%;
     max-width: var(--width-full);
@@ -215,7 +214,7 @@ const StyledDiv = styled.div`
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-1);
     color: var(--color-text);
-    padding: 1rem 1.5rem;
+    padding: 0.8rem 1.2rem;
     margin: 0 0.35rem;
     z-index: 1;
 

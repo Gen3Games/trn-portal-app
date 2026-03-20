@@ -58,7 +58,7 @@ const StyledLi = styled.li`
   .groupHdr {
     border: 1px solid transparent;
     border-radius: var(--radius-md);
-    padding: 0.857rem 1.2rem;
+    padding: 0.72rem 1.05rem;
     font-weight: var(--font-weight-normal);
     line-height: 1.214rem;
     transition: background var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base), border-color var(--transition-base);

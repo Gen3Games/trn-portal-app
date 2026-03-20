@@ -17,7 +17,7 @@ function NodeInfo ({ className = '' }: Props): React.ReactElement<Props> {
   const { api, isApiReady } = useApi();
 
   return (
-    <StyledDiv className={`${className} highlight--color-contrast ui--NodeInfo`}>
+    <StyledDiv className={`${className} ui--NodeInfo`}>
       {isApiReady && (
         <div className='node'>
           <NodeName />&nbsp;
@@ -35,9 +35,10 @@ const StyledDiv = styled.div`
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-1);
+  color: var(--color-text);
   font-size: var(--font-size-tiny);
   line-height: 1.2;
-  padding: 0.65rem 0.9rem;
+  padding: 0.5rem 0.75rem;
   text-align: right;
 
   > div {

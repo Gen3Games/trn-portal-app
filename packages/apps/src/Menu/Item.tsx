@@ -58,7 +58,7 @@ const StyledLi = styled.li`
 
     a {
       border: 1px solid transparent;
-      padding: 0.857rem 0.857em 0.857rem 1rem;
+      padding: 0.72rem 0.8rem 0.72rem 0.92rem;
       line-height: 1.214rem;
       border-radius: var(--radius-md);
       transition: background var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
@@ -79,7 +79,7 @@ const StyledLi = styled.li`
       border-radius: 0.15rem 0.15rem 0 0;
 
       a {
-        padding: 0.857rem 1.429rem 0.857rem;
+        padding: 0.72rem 1.15rem;
         cursor: default;
       }
 
@@ -100,7 +100,7 @@ const StyledLi = styled.li`
   a {
     color: inherit !important;
     display: block;
-    padding: 0.5rem 1.15rem 0.57rem;
+    padding: 0.45rem 1rem 0.5rem;
     text-decoration: none;
     line-height: 1.5rem;
     transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
